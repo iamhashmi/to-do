@@ -30,6 +30,7 @@
                             <th>#</th>
                             <th>Subject</th>
                             <th>Description</th>
+                            <th>Priority</th>
                             <th>Start</th>
                             <th>Finish</th>
                             <th colspan="2">Actions</th>
@@ -43,6 +44,11 @@
                                 <td>{{$count}}</td>
                             <td>{{$item->subject}}</td>
                             <td>{{$item->description}}</td>
+                                <td>{{$item['priority'] === 1 ? 'Critical' : ''}}
+                                    {{$item['priority'] === 2 ? 'High' : ''}}
+                                    {{$item['priority'] === 3 ? 'Medium' : ''}}
+                                    {{$item['priority'] === 4 ? 'Low' : ''}}
+                                    {{$item['priority'] === 5 ? 'Very Low' : ''}}</td>
                             <td>{{$item->start_at}}</td>
                             <td>{{$item->finish_at}}</td>
                                 <td><a class="btn btn-warning" href="{{route('todo.edit',['item'=>$item->id])}}">Edit</a>  </td>
