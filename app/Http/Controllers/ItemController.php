@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class ItemController extends Controller
 {
     public function getItems(){
-        $items = Items::latest()->get();
+        $items = Items::orderBy('priority','ASC')->get();
         return view('home', compact('items'));
     }
 
