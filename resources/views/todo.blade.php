@@ -30,8 +30,7 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">Description</label>
 
                                 <div class="col-md-6">
-                                    <input id="description" type="description" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description">
-
+                                    <textarea name="description" class="form-control @error('description') is-invalid @enderror" cols="5" rows="5">{{ old('description') }}</textarea>
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -44,13 +43,13 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Priority</label>
 
                                 <div class="col-md-6">
-                                    <select class="form-control" name="priority" >
+                                    <select class="form-control" name="priority" required >
                                         <option>Select Priority</option>
-                                        <option value="1">Critical</option>
-                                        <option value="2">High</option>
-                                        <option value="3">Medium</option>
-                                        <option value="4">Low</option>
-                                        <option value="5">Very Low</option>
+                                        <option {{ old('priority') == 1 ? 'selected' : '' }} value="1">Critical</option>
+                                        <option {{ old('priority') == 2 ? 'selected' : '' }} value="2">High</option>
+                                        <option {{ old('priority') == 3 ? 'selected' : '' }} value="3">Medium</option>
+                                        <option {{ old('priority') == 4 ? 'selected' : '' }} value="4">Low</option>
+                                        <option {{ old('priority') == 5 ? 'selected' : '' }} value="5">Very Low</option>
                                     </select>
                                     @error('priority')
                                     <span class="invalid-feedback" role="alert">

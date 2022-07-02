@@ -30,9 +30,7 @@
                                 <label for="email" class="col-md-4 col-form-label text-md-right">Description</label>
 
                                 <div class="col-md-6">
-                                    <textarea class="form-control" name="description">
-                                        {{$item->description}}
-                                    </textarea>
+                                    <textarea class="form-control" cols="5" rows="5"  name="description">{{$item->description}}</textarea>
 
                                 </div>
                             </div>
