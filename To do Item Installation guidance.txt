@@ -1,0 +1,10 @@
+To Do Items Installation Guidance
+Steps:
+1.	Create database in mysql or php admin 
+database name: to_do with root user and no password
+
+2.	Used package for user authentication : composer require laravel/ui "^1.0" –dev
+
+3.	Run php artisan migrate to run the migration 
+4.	Run php artisan db:seed to seed the database with 5 random users
+
